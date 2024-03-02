@@ -11,6 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		NorthwindOracle_DDL-master\northwind_export.sql = NorthwindOracle_DDL-master\northwind_export.sql
 		readme.md = readme.md
+		stash.txt = stash.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OracleWinFormsApp2024", "OracleWinFormsApp2024\OracleWinFormsApp2024.csproj", "{E9706E1A-B88E-4BC6-8436-3002161121F8}"
