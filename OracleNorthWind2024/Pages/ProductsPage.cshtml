@@ -1,0 +1,75 @@
+﻿@page
+@model OracleNorthWind2024.Pages.ProductsPageModel
+@{
+}
+
+<style>
+    .header {
+        position: sticky;
+        top: 0;
+    }
+
+    .tbodyDiv {
+        max-height: clamp(5em,40vh,450px);
+        overflow: auto;
+    }
+
+    .table tbody tr.highlight td {
+        background-color: yellow;
+    }
+</style>
+
+<div class="container">
+    <div class="alert alert-primary" role="alert">
+        <h1 class="fs-5">See console</h1>
+    </div>
+</div>
+
+<form method="post">
+    <div class="tbodyDiv">
+        <table id="infoTable" class="table table-bordered text-start table-striped" data-toggle="table">
+            <thead class="sticky-top bg-white">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Products[0].ProductId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Products[0].ProductName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Products[0].Categories.CategoryName)
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                @for (int index = 0; index < Model.Products.Count; index++)
+                {
+                    <tr>
+
+                        <td>
+                            <input type="hidden" asp-for="Products[index].ProductId" />
+                            @Model.Products[index].ProductId
+                        </td>
+
+                        <td>
+                            <input type="hidden" asp-for="Products[index].ProductName" />
+                            @Model.Products[index].ProductName
+                        </td>
+
+                        <td>
+                            <input type="hidden" asp-for="Products[index].Categories.CategoryName" />
+                            @Model.Products[index].Categories.CategoryName
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+
+</form>

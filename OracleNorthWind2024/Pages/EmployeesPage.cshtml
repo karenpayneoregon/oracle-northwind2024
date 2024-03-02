@@ -1,0 +1,49 @@
+﻿@page
+@model OracleNorthWind2024.Pages.EmployeesPageModel
+@{
+}
+
+<div class="container">
+    <div class="alert alert-primary" role="alert">
+        <h1 class="fs-5">See console</h1>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees[0].LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees[0].Country)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @for (int index = 0; index < Model.Employees.Count; index++)
+        {
+            <tr>
+                <input type="hidden" asp-for="Employees[index].EmployeeId" />
+                <td>
+                    <input type="hidden" asp-for="Employees[index].FirstName" />
+                    @Model.Employees[index].FirstName
+                </td>
+                <td>
+                    <input type="hidden" asp-for="Employees[index].LastName" />
+                    @Model.Employees[index].LastName
+                </td>
+                <td>
+                    <input type="hidden" asp-for="Employees[index].Country" />
+                    @Model.Employees[index].Country
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

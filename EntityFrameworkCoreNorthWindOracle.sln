@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthWindOracleLibrary", "NorthWindOracleLibrary\NorthWindOracleLibrary.csproj", "{E524456A-6B66-4802-9E0B-5743F174379F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OracleNorthWind2024", "OracleNorthWind2024\OracleNorthWind2024.csproj", "{0AB46BE3-6E9F-426D-B248-44A29C54FD3B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4A24DCAC-C3C4-492A-B321-C7D7FDC9C0F6}"
+	ProjectSection(SolutionItems) = preProject
+		NorthwindOracle_DDL-master\northwind_export.sql = NorthwindOracle_DDL-master\northwind_export.sql
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OracleWinFormsApp2024", "OracleWinFormsApp2024\OracleWinFormsApp2024.csproj", "{E9706E1A-B88E-4BC6-8436-3002161121F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Class projects", "Class projects", "{2527FFAC-840B-4C41-AEEF-827B44055BBF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend projects", "Frontend projects", "{24C9B17D-DE1C-45C4-99C3-923193B17D3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeApp", "PracticeApp\PracticeApp.csproj", "{3D3B66D5-3120-4998-B2AC-94F1BA09D93E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E524456A-6B66-4802-9E0B-5743F174379F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E524456A-6B66-4802-9E0B-5743F174379F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E524456A-6B66-4802-9E0B-5743F174379F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E524456A-6B66-4802-9E0B-5743F174379F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AB46BE3-6E9F-426D-B248-44A29C54FD3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AB46BE3-6E9F-426D-B248-44A29C54FD3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AB46BE3-6E9F-426D-B248-44A29C54FD3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AB46BE3-6E9F-426D-B248-44A29C54FD3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9706E1A-B88E-4BC6-8436-3002161121F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9706E1A-B88E-4BC6-8436-3002161121F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9706E1A-B88E-4BC6-8436-3002161121F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9706E1A-B88E-4BC6-8436-3002161121F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D3B66D5-3120-4998-B2AC-94F1BA09D93E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D3B66D5-3120-4998-B2AC-94F1BA09D93E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D3B66D5-3120-4998-B2AC-94F1BA09D93E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D3B66D5-3120-4998-B2AC-94F1BA09D93E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E524456A-6B66-4802-9E0B-5743F174379F} = {2527FFAC-840B-4C41-AEEF-827B44055BBF}
+		{0AB46BE3-6E9F-426D-B248-44A29C54FD3B} = {24C9B17D-DE1C-45C4-99C3-923193B17D3A}
+		{E9706E1A-B88E-4BC6-8436-3002161121F8} = {24C9B17D-DE1C-45C4-99C3-923193B17D3A}
+		{3D3B66D5-3120-4998-B2AC-94F1BA09D93E} = {24C9B17D-DE1C-45C4-99C3-923193B17D3A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {166E6E8A-F80C-4D5E-8A1F-9317503475DE}
+	EndGlobalSection
+EndGlobal

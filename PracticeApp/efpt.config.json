@@ -1,0 +1,73 @@
+﻿{
+   "CodeGenerationMode": 4,
+   "ContextClassName": "Context",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": "Data",
+   "OutputPath": "Models",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "PracticeApp",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 2,
+   "SelectedToBeGenerated": 0,
+   "T4TemplatePath": null,
+   "Tables": [
+      {
+         "Name": "NORTHWIND.CATEGORIES",
+         "ObjectType": 0
+      },
+      {
+         "Name": "NORTHWIND.CUSTOMERS",
+         "ObjectType": 0
+      },
+      {
+         "Name": "NORTHWIND.EMPLOYEES",
+         "ObjectType": 0
+      },
+      {
+         "Name": "NORTHWIND.ORDER_DETAILS",
+         "ObjectType": 0
+      },
+      {
+         "Name": "NORTHWIND.ORDERS",
+         "ObjectType": 0
+      },
+      {
+         "Name": "NORTHWIND.PRODUCTS",
+         "ObjectType": 0
+      },
+      {
+         "Name": "NORTHWIND.SHIPPERS",
+         "ObjectType": 0
+      },
+      {
+         "Name": "NORTHWIND.SUPPLIERS",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "aix-aixdev.emp.state.or.us\/DEV.EMP.STATE.OR.US",
+   "UncountableWords": null,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": true,
+   "UseDateOnlyTimeOnly": true,
+   "UseDbContextSplitting": true,
+   "UseDecimalDataAnnotationForSprocResult": true,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSchemaNamespaces": false,
+   "UseSpatial": false,
+   "UseT4": false
+}

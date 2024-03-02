@@ -1,0 +1,1 @@
+Each service must implement IOperations&lt;T> which means Visual Studio will force the methods defined to be included but does not mean each one needs to be coded.

@@ -1,0 +1,43 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container">
+    <div class="alert alert-primary" role="alert">
+        <h1 class="fs-5">EF Core - dependency injection using old version of Microsoft Northwind database</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Customers.CustomerId" />
+            <div>
+                <label asp-for="Customers.CompanyName"></label>
+                <input asp-for="Customers.CompanyName" class="form-control" />
+                <span asp-validation-for="Customers.CompanyName" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="Customers.ContactTitle"></label>
+                <input asp-for="Customers.ContactTitle" class="form-control" />
+                <span asp-validation-for="Customers.ContactTitle" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="Customers.ContactName"></label>
+                <input asp-for="Customers.ContactName" class="form-control" />
+                <span asp-validation-for="Customers.ContactName" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="Customers.Phone"></label>
+                <input asp-for="Customers.Phone" class="form-control" />
+                <span asp-validation-for="Customers.Phone" class="text-danger"></span>
+            </div>
+            <div class="mt-2">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
