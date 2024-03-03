@@ -30,6 +30,9 @@ partial class Form1
     {
         FixSupplierRegionButton = new Button();
         AddEmployeeButton = new Button();
+        CountriesComboBox = new ComboBox();
+        label1 = new Label();
+        CurrentCountryButton = new Button();
         SuspendLayout();
         // 
         // FixSupplierRegionButton
@@ -52,22 +55,58 @@ partial class Form1
         AddEmployeeButton.UseVisualStyleBackColor = true;
         AddEmployeeButton.Click += AddEmployeeButton_Click;
         // 
+        // CountriesComboBox
+        // 
+        CountriesComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+        CountriesComboBox.FormattingEnabled = true;
+        CountriesComboBox.Location = new Point(305, 35);
+        CountriesComboBox.Name = "CountriesComboBox";
+        CountriesComboBox.Size = new Size(307, 28);
+        CountriesComboBox.TabIndex = 2;
+        // 
+        // label1
+        // 
+        label1.AutoSize = true;
+        label1.Location = new Point(305, 9);
+        label1.Name = "label1";
+        label1.Size = new Size(71, 20);
+        label1.TabIndex = 4;
+        label1.Text = "Countries";
+        // 
+        // CurrentCountryButton
+        // 
+        CurrentCountryButton.Location = new Point(635, 34);
+        CurrentCountryButton.Name = "CurrentCountryButton";
+        CurrentCountryButton.Size = new Size(94, 29);
+        CurrentCountryButton.TabIndex = 5;
+        CurrentCountryButton.Text = "Current";
+        CurrentCountryButton.UseVisualStyleBackColor = true;
+        CurrentCountryButton.Click += CurrentCountryButton_Click;
+        // 
         // Form1
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(329, 266);
+        ClientSize = new Size(757, 189);
+        Controls.Add(CurrentCountryButton);
+        Controls.Add(label1);
+        Controls.Add(CountriesComboBox);
         Controls.Add(AddEmployeeButton);
         Controls.Add(FixSupplierRegionButton);
         FormBorderStyle = FormBorderStyle.FixedToolWindow;
         Name = "Form1";
         StartPosition = FormStartPosition.CenterScreen;
         Text = "Form1";
+        Load += Form1_Load;
         ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
 
     private Button FixSupplierRegionButton;
     private Button AddEmployeeButton;
+    private ComboBox CountriesComboBox;
+    private Label label1;
+    private Button CurrentCountryButton;
 }

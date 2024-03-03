@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
-using NorthWindOracleLibrary.Models;
+using PracticeApp.Models;
 
-namespace NorthWindOracleLibrary.Classes;
+namespace PracticeApp.Classes;
 public class ReferenceLists
 {
     public static List<ContactType> CustomerTitles()
@@ -67,12 +67,12 @@ public class ReferenceLists
         return JsonSerializer.Deserialize<List<ContactType>>(json)!;
     }
 
-    public static List<ContactType> ContactTypes
+    public static List<ContactType> ContactTypes 
         => CustomerTitles();
 
     public static List<Countries> CountriesList()
     {
-        var json =
+        var json = 
             """
             [
               {

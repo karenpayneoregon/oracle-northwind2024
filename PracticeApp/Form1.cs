@@ -3,6 +3,8 @@ using PracticeApp.Models;
 using System.Data;
 using Dapper;
 using Oracle.ManagedDataAccess.Client;
+using System.Text.Json;
+using PracticeApp.Classes;
 
 namespace PracticeApp;
 
@@ -42,13 +44,8 @@ public partial class Form1 : Form
 
     }
     /// <summary>
-    /// Add new record
-    /// - From sequence fetch the next id
-    /// - Set EmployeeId to above
-    /// - Save record
+    /// See the DbContext SaveChanges which gets the primary key for the new <see cref="Employees"/> record
     /// </summary>
-    /// <remarks>
-    /// </remarks>
     private void AddEmployeeButton_Click(object sender, EventArgs e)
     {
         using var context = new Context();
@@ -70,10 +67,24 @@ public partial class Form1 : Form
             ReportsTo = 2,
         };
         context.Add(employees);
-        var affected = context.SaveChanges();
+        context.SaveChanges();
     }
 
     private IDbConnection _cn;
 
+    private void Form1_Load(object sender, EventArgs e)
+    {
+        CountriesComboBox.DataSource = ReferenceData.Instance.CountriesList;
+        CountriesComboBox.SelectedIndex = -1;
+    }
 
+    private void CurrentCountryButton_Click(object sender, EventArgs e)
+    {
+        if (CountriesComboBox.SelectedIndex > -1)
+        {
+            var item = (Countries)CountriesComboBox.SelectedItem!;
+            MessageBox.Show($"{item.CountryIdentifier} {item.CountryName}");
+        }
+        
+    }
 }
