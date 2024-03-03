@@ -86,6 +86,19 @@ public partial class Context : DbContext
 
     public override int SaveChanges()
     {
+        AddNewRecordLogic();
+
+        return base.SaveChanges();
+    }
+
+    public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new())
+    {
+        AddNewRecordLogic();
+        return base.SaveChangesAsync(cancellationToken);
+    }
+
+    private void AddNewRecordLogic()
+    {
         var addedEntries = ChangeTracker
             .Entries()
             .Where(e => e.State == EntityState.Added);
@@ -98,8 +111,5 @@ public partial class Context : DbContext
                     .QuerySingle<int>(sequencerEntity.GetSequenceStatement().ToString());
             }
         }
-
-        return base.SaveChanges();
     }
-
 }
