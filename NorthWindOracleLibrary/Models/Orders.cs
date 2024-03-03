@@ -17,33 +17,44 @@ public partial class Orders
     [Column("EMPLOYEE_ID")]
     public int EmployeeId { get; set; }
 
-    public DateTime ORDER_DATE { get; set; }
+    [Column("ORDER_DATE")]
+    public DateTime OrderDate { get; set; }
 
-    public DateTime? REQUIRED_DATE { get; set; }
+    [Column("REQUIRED_DATE")]
+    public DateTime? RequiredDate { get; set; }
 
-    public DateTime? SHIPPED_DATE { get; set; }
+    [Column("SHIPPED_DATE")]
+    public DateTime? ShippedDate { get; set; }
 
-    public int? SHIP_VIA { get; set; }
+    [Column("SHIP_VIA")]
+    public int? ShipVia { get; set; }
 
-    public decimal? FREIGHT { get; set; }
+    [Column("FREIGHT")]
+    public decimal? Freight { get; set; }
 
-    public string SHIP_NAME { get; set; }
+    [Column("SHIP_NAME")]
+    public string ShipName { get; set; }
 
-    public string SHIP_ADDRESS { get; set; }
+    [Column("SHIP_ADDRESS")]
+    public string ShipAddress { get; set; }
 
-    public string SHIP_CITY { get; set; }
+    [Column("SHIP_CITY")]
+    public string ShipCity { get; set; }
 
-    public string SHIP_REGION { get; set; }
+    [Column("SHIP_REGION")]
+    public string ShipRegion { get; set; }
 
-    public string SHIP_POSTAL_CODE { get; set; }
+    [Column("SHIP_POSTAL_CODE")]
+    public string ShipPostalCode { get; set; }
 
-    public string SHIP_COUNTRY { get; set; }
+    [Column("SHIP_COUNTRY")]
+    public string ShippedCountry { get; set; }
 
-    public virtual Customers CUSTOMER { get; set; }
+    public virtual Customers Customer { get; set; }
 
-    public virtual Employees EMPLOYEE { get; set; }
+    public virtual Employees Employee { get; set; }
 
-    public virtual ICollection<OrderDetails> ORDER_DETAILS { get; set; } = new List<OrderDetails>();
+    public virtual ICollection<OrderDetails> OrderDetails { get; set; } = new List<OrderDetails>();
 
     public virtual Shippers ShipViaNavigation { get; set; }
 }

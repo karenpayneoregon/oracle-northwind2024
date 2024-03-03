@@ -29,7 +29,7 @@ public partial class OrderDetailsConfiguration : IEntityTypeConfiguration<OrderD
             .HasDefaultValueSql("0")
             .HasColumnType("NUMBER(10,2)");
 
-        entity.HasOne(d => d.Order).WithMany(p => p.ORDER_DETAILS)
+        entity.HasOne(d => d.Order).WithMany(p => p.OrderDetails)
             .HasForeignKey(d => d.OrderId)
             .OnDelete(DeleteBehavior.ClientSetNull)
             .HasConstraintName("FK_ORDER_ID");

@@ -49,7 +49,7 @@ namespace PracticeApp.Data.Configurations
             .HasDefaultValueSql("0")
             .HasColumnType("NUMBER(10,2)");
 
-            entity.HasOne(d => d.CATEGORY).WithMany(p => p.PRODUCTS)
+            entity.HasOne(d => d.CATEGORY).WithMany(p => p.Products)
             .HasForeignKey(d => d.CATEGORY_ID)
             .OnDelete(DeleteBehavior.ClientSetNull)
             .HasConstraintName("FK_CATEGORY_ID");

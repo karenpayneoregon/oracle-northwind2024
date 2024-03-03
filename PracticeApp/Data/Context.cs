@@ -94,9 +94,13 @@ public partial class Context : DbContext
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new())
     {
         AddNewRecordLogic();
+
         return base.SaveChangesAsync(cancellationToken);
     }
 
+    /// <summary>
+    /// Get primary key for adding new record
+    /// </summary>
     private void AddNewRecordLogic()
     {
         var addedEntries = ChangeTracker

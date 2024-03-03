@@ -1,0 +1,1 @@
+This project is a great place to learn to use Oracle/EF Core without being concerned about setting up a web app or other type of project.

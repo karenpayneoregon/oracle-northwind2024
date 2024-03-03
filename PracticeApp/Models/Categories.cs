@@ -9,13 +9,26 @@ namespace PracticeApp.Models;
 [Table("CATEGORIES")]
 public partial class Categories
 {
-    public int CATEGORY_ID { get; set; }
+    [Column("CATEGORY_ID")]
+    public int CategoryId { get; set; }
 
-    public string CATEGORY_NAME { get; set; }
+    [Column("CATEGORY_NAME")]
+    public string CategoryName { get; set; }
 
-    public string DESCRIPTION { get; set; }
+    [Column("DESCRIPTION")]
+    public string Description { get; set; }
 
-    public string PICTURE { get; set; }
+    [Column("PICTURE")]
+    public string Photo { get; set; }
 
-    public virtual ICollection<Products> PRODUCTS { get; set; } = new List<Products>();
+    /// <summary>
+    /// Used in OracleWinFormsApp2024 project to
+    /// read images from a local folder
+    /// </summary>
+    [NotMapped]
+    public Image Picture { get; set; }
+
+    public override string ToString() => CategoryName;
+
+    public virtual ICollection<Products> Products { get; set; } = new List<Products>();
 }

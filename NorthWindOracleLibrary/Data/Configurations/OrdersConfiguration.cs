@@ -17,57 +17,57 @@ public partial class OrdersConfiguration : IEntityTypeConfiguration<Orders>
 
         entity.HasIndex(e => e.EmployeeId, "IDX_ORDERS_EMPLOYEE_ID");
 
-        entity.HasIndex(e => e.ORDER_DATE, "IDX_ORDERS_ORDER_DATE");
+        entity.HasIndex(e => e.OrderDate, "IDX_ORDERS_ORDER_DATE");
 
-        entity.HasIndex(e => e.SHIPPED_DATE, "IDX_ORDERS_SHIPPED_DATE");
+        entity.HasIndex(e => e.ShippedDate, "IDX_ORDERS_SHIPPED_DATE");
 
-        entity.HasIndex(e => e.SHIP_VIA, "IDX_ORDERS_SHIPPER_ID");
+        entity.HasIndex(e => e.ShipVia, "IDX_ORDERS_SHIPPER_ID");
 
-        entity.HasIndex(e => e.SHIP_POSTAL_CODE, "IDX_ORDERS_SHIP_POSTAL_CODE");
+        entity.HasIndex(e => e.ShipPostalCode, "IDX_ORDERS_SHIP_POSTAL_CODE");
 
         entity.Property(e => e.OrderId)
             .HasPrecision(9)
             .ValueGeneratedNever();
         entity.Property(e => e.CustomerId).HasPrecision(9);
         entity.Property(e => e.EmployeeId).HasPrecision(9);
-        entity.Property(e => e.FREIGHT)
+        entity.Property(e => e.Freight)
             .HasDefaultValueSql("0")
             .HasColumnType("NUMBER(10,2)");
-        entity.Property(e => e.ORDER_DATE).HasColumnType("DATE");
-        entity.Property(e => e.REQUIRED_DATE).HasColumnType("DATE");
-        entity.Property(e => e.SHIPPED_DATE).HasColumnType("DATE");
-        entity.Property(e => e.SHIP_ADDRESS)
+        entity.Property(e => e.OrderDate).HasColumnType("DATE");
+        entity.Property(e => e.RequiredDate).HasColumnType("DATE");
+        entity.Property(e => e.ShippedDate).HasColumnType("DATE");
+        entity.Property(e => e.ShipAddress)
             .HasMaxLength(60)
             .IsUnicode(false);
-        entity.Property(e => e.SHIP_CITY)
+        entity.Property(e => e.ShipCity)
             .HasMaxLength(15)
             .IsUnicode(false);
-        entity.Property(e => e.SHIP_COUNTRY)
+        entity.Property(e => e.ShippedCountry)
             .HasMaxLength(15)
             .IsUnicode(false);
-        entity.Property(e => e.SHIP_NAME)
+        entity.Property(e => e.ShipName)
             .HasMaxLength(40)
             .IsUnicode(false);
-        entity.Property(e => e.SHIP_POSTAL_CODE)
+        entity.Property(e => e.ShipPostalCode)
             .HasMaxLength(10)
             .IsUnicode(false);
-        entity.Property(e => e.SHIP_REGION)
+        entity.Property(e => e.ShipRegion)
             .HasMaxLength(15)
             .IsUnicode(false);
-        entity.Property(e => e.SHIP_VIA).HasPrecision(9);
+        entity.Property(e => e.ShipVia).HasPrecision(9);
 
-        entity.HasOne(d => d.CUSTOMER).WithMany(p => p.Orders)
+        entity.HasOne(d => d.Customer).WithMany(p => p.Orders)
             .HasForeignKey(d => d.CustomerId)
             .OnDelete(DeleteBehavior.ClientSetNull)
             .HasConstraintName("FK_CUSTOMER_ID");
 
-        entity.HasOne(d => d.EMPLOYEE).WithMany(p => p.ORDERS)
+        entity.HasOne(d => d.Employee).WithMany(p => p.ORDERS)
             .HasForeignKey(d => d.EmployeeId)
             .OnDelete(DeleteBehavior.ClientSetNull)
             .HasConstraintName("FK_EMPLOYEE_ID");
 
         entity.HasOne(d => d.ShipViaNavigation).WithMany(p => p.Orders)
-            .HasForeignKey(d => d.SHIP_VIA)
+            .HasForeignKey(d => d.ShipVia)
             .HasConstraintName("FK_SHIPPER_ID");
 
         OnConfigurePartial(entity);
