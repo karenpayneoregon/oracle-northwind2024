@@ -13,7 +13,6 @@ public partial class Form1 : Form
     public Form1()
     {
         InitializeComponent();
-        _cn = new OracleConnection(ConnectionString());
     }
 
     private void FixSupplierRegionButton_Click(object sender, EventArgs e)
@@ -69,8 +68,6 @@ public partial class Form1 : Form
         context.Add(employees);
         context.SaveChanges();
     }
-
-    private IDbConnection _cn;
 
     private void Form1_Load(object sender, EventArgs e)
     {
