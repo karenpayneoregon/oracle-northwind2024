@@ -51,18 +51,12 @@ public partial class Form1 : Form
     /// </remarks>
     private void AddEmployeeButton_Click(object sender, EventArgs e)
     {
-        int GetIdentifier()
-        {
-            var id = _cn.QuerySingle<int>("SELECT SEQ_NW_EMPLOYEES.NEXTVAL FROM dual");
-            return id;
-        }
-
         using var context = new Context();
 
         Employees employees = new Employees
         {
-            FirstName = "Jim",
-            LastName = "Smith",
+            FirstName = "Karen",
+            LastName = "Adams",
             Title = "Manager",
             TitleOfCourtesy = "Mr",
             BirthDate = new DateTime(1957, 1, 12, 13, 1, 1),
@@ -71,13 +65,12 @@ public partial class Form1 : Form
             City = "Portland",
             Region = "PX",
             PostalCode = "97643",
-            Photo = "jim.png",
+            Photo = "karen.png",
             Notes = "Just added",
             ReportsTo = 2,
-            EmployeeId = GetIdentifier()
         };
         context.Add(employees);
-        context.SaveChanges();
+        var affected = context.SaveChanges();
     }
 
     private IDbConnection _cn;

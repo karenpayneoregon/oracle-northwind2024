@@ -7,73 +7,72 @@ using PracticeApp.Models;
 using System;
 using System.Collections.Generic;
 
-namespace PracticeApp.Data.Configurations
+namespace PracticeApp.Data.Configurations;
+
+public partial class EmployeesConfiguration : IEntityTypeConfiguration<Employees>
 {
-    public partial class EmployeesConfiguration : IEntityTypeConfiguration<Employees>
+    public void Configure(EntityTypeBuilder<Employees> entity)
     {
-        public void Configure(EntityTypeBuilder<Employees> entity)
-        {
-            entity.HasKey(e => e.EmployeeId);
+        entity.HasKey(e => e.EmployeeId);
 
-            entity.HasIndex(e => e.LastName, "IDX_EMPLOYEES_LASTNAME");
+        entity.HasIndex(e => e.LastName, "IDX_EMPLOYEES_LASTNAME");
 
-            entity.HasIndex(e => e.PostalCode, "IDX_EMPLOYEES_POSTAL_CODE");
+        entity.HasIndex(e => e.PostalCode, "IDX_EMPLOYEES_POSTAL_CODE");
 
-            entity.Property(e => e.EmployeeId)
+        entity.Property(e => e.EmployeeId)
             .HasPrecision(9)
             .ValueGeneratedNever();
-            entity.Property(e => e.Address)
+        entity.Property(e => e.Address)
             .HasMaxLength(60)
             .IsUnicode(false);
-            entity.Property(e => e.BirthDate).HasColumnType("DATE");
-            entity.Property(e => e.City)
+        entity.Property(e => e.BirthDate).HasColumnType("DATE");
+        entity.Property(e => e.City)
             .HasMaxLength(15)
             .IsUnicode(false);
-            entity.Property(e => e.Country)
+        entity.Property(e => e.Country)
             .HasMaxLength(15)
             .IsUnicode(false);
-            entity.Property(e => e.Extension)
+        entity.Property(e => e.Extension)
             .HasMaxLength(4)
             .IsUnicode(false);
-            entity.Property(e => e.FirstName)
+        entity.Property(e => e.FirstName)
             .IsRequired()
             .HasMaxLength(10)
             .IsUnicode(false);
-            entity.Property(e => e.HireDate).HasColumnType("DATE");
-            entity.Property(e => e.HomePhone)
+        entity.Property(e => e.HireDate).HasColumnType("DATE");
+        entity.Property(e => e.HomePhone)
             .HasMaxLength(24)
             .IsUnicode(false);
-            entity.Property(e => e.LastName)
+        entity.Property(e => e.LastName)
             .IsRequired()
             .HasMaxLength(20)
             .IsUnicode(false);
-            entity.Property(e => e.Notes)
+        entity.Property(e => e.Notes)
             .HasMaxLength(2000)
             .IsUnicode(false);
-            entity.Property(e => e.Photo)
+        entity.Property(e => e.Photo)
             .HasMaxLength(255)
             .IsUnicode(false);
-            entity.Property(e => e.PostalCode)
+        entity.Property(e => e.PostalCode)
             .HasMaxLength(10)
             .IsUnicode(false);
-            entity.Property(e => e.Region)
+        entity.Property(e => e.Region)
             .HasMaxLength(15)
             .IsUnicode(false);
-            entity.Property(e => e.ReportsTo).HasPrecision(9);
-            entity.Property(e => e.Title)
+        entity.Property(e => e.ReportsTo).HasPrecision(9);
+        entity.Property(e => e.Title)
             .HasMaxLength(30)
             .IsUnicode(false);
-            entity.Property(e => e.TitleOfCourtesy)
+        entity.Property(e => e.TitleOfCourtesy)
             .HasMaxLength(25)
             .IsUnicode(false);
 
-            entity.HasOne(d => d.REPORTS_TONavigation).WithMany(p => p.InverseReportsToNavigation)
+        entity.HasOne(d => d.REPORTS_TONavigation).WithMany(p => p.InverseReportsToNavigation)
             .HasForeignKey(d => d.ReportsTo)
             .HasConstraintName("FK_REPORTS_TO");
 
-            OnConfigurePartial(entity);
-        }
-
-        partial void OnConfigurePartial(EntityTypeBuilder<Employees> entity);
+        OnConfigurePartial(entity);
     }
+
+    partial void OnConfigurePartial(EntityTypeBuilder<Employees> entity);
 }

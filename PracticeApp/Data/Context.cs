@@ -7,6 +7,10 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
 using PracticeApp.Classes;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System.Runtime.CompilerServices;
+using Dapper;
+using Oracle.ManagedDataAccess.Client;
 
 #nullable disable
 
@@ -79,4 +83,23 @@ public partial class Context : DbContext
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+    public override int SaveChanges()
+    {
+        var addedEntries = ChangeTracker
+            .Entries()
+            .Where(e => e.State == EntityState.Added);
+
+        foreach (var entry in addedEntries)
+        {
+            if (entry.Entity is IHasSequencer sequencerEntity)
+            {
+                sequencerEntity.Id = Database.GetDbConnection()
+                    .QuerySingle<int>(sequencerEntity.GetSequenceStatement().ToString());
+            }
+        }
+
+        return base.SaveChanges();
+    }
+
 }
