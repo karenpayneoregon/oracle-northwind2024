@@ -33,6 +33,7 @@ partial class Form1
         CountriesComboBox = new ComboBox();
         label1 = new Label();
         CurrentCountryButton = new Button();
+        IterateEmployeesButton = new Button();
         SuspendLayout();
         // 
         // FixSupplierRegionButton
@@ -83,11 +84,22 @@ partial class Form1
         CurrentCountryButton.UseVisualStyleBackColor = true;
         CurrentCountryButton.Click += CurrentCountryButton_Click;
         // 
+        // IterateEmployeesButton
+        // 
+        IterateEmployeesButton.Location = new Point(12, 135);
+        IterateEmployeesButton.Name = "IterateEmployeesButton";
+        IterateEmployeesButton.Size = new Size(272, 29);
+        IterateEmployeesButton.TabIndex = 6;
+        IterateEmployeesButton.Text = "Iterate Employees";
+        IterateEmployeesButton.UseVisualStyleBackColor = true;
+        IterateEmployeesButton.Click += IterateEmployeesButton_Click;
+        // 
         // Form1
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(757, 189);
+        Controls.Add(IterateEmployeesButton);
         Controls.Add(CurrentCountryButton);
         Controls.Add(label1);
         Controls.Add(CountriesComboBox);
@@ -109,4 +121,5 @@ partial class Form1
     private ComboBox CountriesComboBox;
     private Label label1;
     private Button CurrentCountryButton;
+    private Button IterateEmployeesButton;
 }

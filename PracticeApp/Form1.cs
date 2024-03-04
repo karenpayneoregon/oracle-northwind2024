@@ -1,6 +1,7 @@
 using PracticeApp.Data;
 using PracticeApp.Models;
 using System.Data;
+using System.Diagnostics;
 using Dapper;
 using Oracle.ManagedDataAccess.Client;
 using System.Text.Json;
@@ -82,6 +83,19 @@ public partial class Form1 : Form
             var item = (Countries)CountriesComboBox.SelectedItem!;
             MessageBox.Show($"{item.CountryIdentifier} {item.CountryName}");
         }
-        
+
+    }
+
+    private void IterateEmployeesButton_Click(object sender, EventArgs e)
+    {
+        using var context = new Context();
+        var list = context.Employees.ToList();
+
+        foreach (var emp in list)
+        {
+            Debug.WriteLine($"{emp.EmployeeId, -4}{emp.FirstName,-15}{emp.LastName}");
+        }
+
+        Debug.WriteLine("");
     }
 }

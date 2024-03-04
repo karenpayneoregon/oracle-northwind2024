@@ -5,6 +5,7 @@ using PracticeApp.Models;
 using Microsoft.Extensions.Logging;
 using PracticeApp.Classes;
 using Dapper;
+using PracticeApp.Extensions;
 
 #nullable disable
 
@@ -80,34 +81,17 @@ public partial class Context : DbContext
 
     public override int SaveChanges()
     {
-        AddNewRecordLogic();
+        this.AddNewRecordLogic();
 
         return base.SaveChanges();
     }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new())
     {
-        AddNewRecordLogic();
+        this.AddNewRecordLogic();
 
         return base.SaveChangesAsync(cancellationToken);
     }
 
-    /// <summary>
-    /// Get primary key for adding new record
-    /// </summary>
-    private void AddNewRecordLogic()
-    {
-        var addedEntries = ChangeTracker
-            .Entries()
-            .Where(e => e.State == EntityState.Added);
 
-        foreach (var entry in addedEntries)
-        {
-            if (entry.Entity is IHasSequencer sequencerEntity)
-            {
-                sequencerEntity.Id = Database.GetDbConnection()
-                    .QuerySingle<int>(sequencerEntity.GetSequenceStatement().ToString());
-            }
-        }
-    }
 }
