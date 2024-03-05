@@ -24,9 +24,9 @@ public class ProductsService : IOperations<Products>
         return _context.Products.Include(x => x.Categories).ToList();
     }
 
-    public Task<List<Products>> GetAllAsync()
+    public async Task<List<Products>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        return await _context.Products.Include(x => x.Categories).ToListAsync();
     }
 
     public Products GetById(int id)
