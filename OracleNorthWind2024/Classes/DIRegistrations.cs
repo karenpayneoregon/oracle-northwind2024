@@ -22,12 +22,13 @@ public static class DIRegistrations
     {
 
         // Bad per-say as the interface is only for one type
-        services.AddLazySingleton<IEmployeesService, EmployeesService>();
+        //services.AddLazySingleton<IEmployeesService, EmployeesService>();
 
         // Good universal 
         services.AddScoped(typeof(IOperations<Products>), typeof(ProductsService));
         services.AddScoped(typeof(IOperations<Customers>), typeof(CustomersService));
         services.AddScoped(typeof(IOperations<ContactType>), typeof(ContactTypeService));
+        services.AddScoped(typeof(IEmployeesService), typeof(EmployeesService));
 
         // FluentValidation validators
         services.AddScoped<IValidator<Customers>, CustomersValidator>();

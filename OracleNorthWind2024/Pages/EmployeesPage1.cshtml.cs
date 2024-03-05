@@ -15,7 +15,6 @@ namespace OracleNorthWind2024.Pages
         public IList<Employees> Employees { get; set; }
         public void OnGet([FromServices] IEmployeesService service)
         {
-            service = new EmployeesService(context);
             Employees = service.GetEmployees();
         }               
     }

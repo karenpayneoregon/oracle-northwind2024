@@ -15,9 +15,9 @@
         {
           "Documents": [
             {
-              "FilePath": "C:\\OED\\DotnetLand\\VS2022\\EntityFrameworkCoreNorthWindOracle\\NorthWindOracleLibrary\\Services\\ProductsService.cs",
-              "RelativePath": "..\\..\\NorthWindOracleLibrary\\Services\\ProductsService.cs",
-              "FullName": "ProductsService.cs",
+              "FilePath": "C:\\OED\\DotnetLand\\VS2022\\EntityFrameworkCoreNorthWindOracle\\OracleNorthWind2024\\Classes\\DIRegistrations.cs",
+              "RelativePath": "..\\..\\OracleNorthWind2024\\Classes\\DIRegistrations.cs",
+              "FullName": "DIRegistrations.cs",
               "DockedHeight": {
                 "UnitType": "Stretch",
                 "Value": 162
@@ -26,11 +26,58 @@
                 "UnitType": "Stretch",
                 "Value": 200
               },
-              "Line": 30,
-              "Column": 6,
+              "Line": 26,
+              "Column": 9,
               "IsPinned": false,
-              "IsActive": true,
               "IsSelected": true
+            },
+            {
+              "FilePath": "C:\\OED\\DotnetLand\\VS2022\\EntityFrameworkCoreNorthWindOracle\\OracleNorthWind2024\\appsettings.json",
+              "RelativePath": "..\\..\\OracleNorthWind2024\\appsettings.json",
+              "FullName": "appsettings.json",
+              "DockedHeight": {
+                "UnitType": "Stretch",
+                "Value": 162
+              },
+              "DockedWidth": {
+                "UnitType": "Stretch",
+                "Value": 200
+              },
+              "Line": 10,
+              "Column": 53,
+              "IsPinned": false
+            },
+            {
+              "FilePath": "C:\\OED\\DotnetLand\\VS2022\\EntityFrameworkCoreNorthWindOracle\\OracleWinFormsApp2024\\appsettings.json",
+              "RelativePath": "..\\..\\OracleWinFormsApp2024\\appsettings.json",
+              "FullName": "appsettings.json",
+              "DockedHeight": {
+                "UnitType": "Stretch",
+                "Value": 162
+              },
+              "DockedWidth": {
+                "UnitType": "Stretch",
+                "Value": 200
+              },
+              "Line": 4,
+              "Column": 45,
+              "IsPinned": false
+            },
+            {
+              "FilePath": "C:\\OED\\DotnetLand\\VS2022\\EntityFrameworkCoreNorthWindOracle\\stash.txt",
+              "RelativePath": "..\\..\\stash.txt",
+              "FullName": "stash.txt",
+              "DockedHeight": {
+                "UnitType": "Stretch",
+                "Value": 162
+              },
+              "DockedWidth": {
+                "UnitType": "Stretch",
+                "Value": 200
+              },
+              "Line": 20,
+              "Column": 204,
+              "IsPinned": false
             },
             {
               "FilePath": "C:\\OED\\DotnetLand\\VS2022\\EntityFrameworkCoreNorthWindOracle\\OracleNorthWind2024\\Pages\\EmployeesPage1.cshtml",
@@ -60,8 +107,8 @@
                 "UnitType": "Stretch",
                 "Value": 200
               },
-              "Line": 9,
-              "Column": 5,
+              "Line": 23,
+              "Column": 2,
               "IsPinned": false
             }
           ],
